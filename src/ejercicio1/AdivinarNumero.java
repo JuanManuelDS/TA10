@@ -4,6 +4,8 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import excepciones.ExcepcionesPersonalizadas;
+
 public class AdivinarNumero {
 
 	private int numeroPorAdivinar;
@@ -22,7 +24,7 @@ public class AdivinarNumero {
 						"Ingrese un número entre 1 y 500 para ver si coincide con el que piensa la máquina"));
 				//En caso que el número esté fuera del rango lanzo un error personalizado
 				if(input<0 || input>500) 
-					throw new ExcepcionesAdivinador(1);
+					throw new ExcepcionesPersonalizadas(1);
 				else if(input==numeroPorAdivinar) {
 					JOptionPane.showMessageDialog(null, "Felicitaciones!!! Has adivinado en " + intentos + " intentos!!!");
 					adivino=true;
@@ -37,7 +39,7 @@ public class AdivinarNumero {
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "Debe ingresar únicamente valores numéricos. Vuelva a intentarlo");
 				intentos++;
-			} catch(ExcepcionesAdivinador ea) {
+			} catch(ExcepcionesPersonalizadas ea) {
 				JOptionPane.showMessageDialog(null, ea.getMessage());
 				intentos++;
 			}
