@@ -8,6 +8,7 @@ public class Numero {
 
 	private int numeroAleatorio;
 	
+	//constructor por defecto, asigna aleatoriamente un número
 	public Numero() {
 		this.numeroAleatorio = createRandomInt();
 	}
