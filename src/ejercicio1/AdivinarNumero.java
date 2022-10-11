@@ -14,6 +14,7 @@ public class AdivinarNumero {
 
 	public void jugar() {
 		boolean adivino = false;
+		int intentos = 0;
 		JOptionPane.showMessageDialog(null, "Bienvenido al Adivinador Adivinador");
 		do {
 			try {
@@ -23,18 +24,22 @@ public class AdivinarNumero {
 				if(input<0 || input>500) 
 					throw new ExcepcionesAdivinador(1);
 				else if(input==numeroPorAdivinar) {
-					JOptionPane.showMessageDialog(null, "Felicitaciones!!! Has adivinado!!!");
+					JOptionPane.showMessageDialog(null, "Felicitaciones!!! Has adivinado en " + intentos + " intentos!!!");
 					adivino=true;
 				} else if(input<numeroPorAdivinar) {
 					JOptionPane.showMessageDialog(null, "Frío");
+					intentos++;
 				} else {
 					JOptionPane.showMessageDialog(null, "Caliente");
+					intentos++;
 				}
 			//Por si el usuario ingresó algo que no sea un número
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "Debe ingresar únicamente valores numéricos. Vuelva a intentarlo");
+				intentos++;
 			} catch(ExcepcionesAdivinador ea) {
 				JOptionPane.showMessageDialog(null, ea.getMessage());
+				intentos++;
 			}
 		
 		}while(!adivino);
