@@ -26,6 +26,9 @@ public class ExcepcionesPersonalizadas extends Exception{
 		case 4:
 			mensaje="El número es impar";
 			break;
+		case 5:
+			mensaje="Opción no valida. Debe ingresar un número entre 1 y 7";
+			break;
 		default:
 			mensaje="Código de error desconocido";
 			break;

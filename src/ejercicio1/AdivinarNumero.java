@@ -23,7 +23,7 @@ public class AdivinarNumero {
 				int input = Integer.parseInt(JOptionPane.showInputDialog(
 						"Ingrese un número entre 1 y 500 para ver si coincide con el que piensa la máquina"));
 				//En caso que el número esté fuera del rango lanzo un error personalizado
-				if(input<0 || input>500) 
+				if(input<1 || input>500) 
 					throw new ExcepcionesPersonalizadas(1);
 				else if(input==numeroPorAdivinar) {
 					JOptionPane.showMessageDialog(null, "Felicitaciones!!! Has adivinado en " + intentos + " intentos!!!");
